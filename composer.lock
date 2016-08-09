@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ec02dff7f09d96d0ae99ab58c718b062",
-    "content-hash": "e940d0c9d299ed6e3997fba94973a0bc",
+    "hash": "8cf3e6e4c963ef7efe22d61e0767aa07",
+    "content-hash": "07c1b4ba56519dbda8e2fa15e3923698",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1759,6 +1759,57 @@
                 "templating"
             ],
             "time": "2016-01-25 21:22:18"
+        },
+        {
+            "name": "twitter/bootstrap-bundle",
+            "version": "1.3.1",
+            "target-dir": "Twitter/BootstrapBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andrey1s/TwitterBootstrapBundle.git",
+                "reference": "565a05647ac285dea5e4c2b24bb2ea28b8c349ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andrey1s/TwitterBootstrapBundle/zipball/565a05647ac285dea5e4c2b24bb2ea28b8c349ae",
+                "reference": "565a05647ac285dea5e4c2b24bb2ea28b8c349ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/symfony": ">=2.3,<3.0-dev",
+                "symfony/twig-bridge": ">=2.3,<3.0-dev"
+            },
+            "require-dev": {
+                "friendsofsymfony/user-bundle": "1.*",
+                "knplabs/knp-paginator-bundle": "2.3.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Twitter\\BootstrapBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samusev Andrey",
+                    "email": "andrey_simfi@list.ru",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development. integration into Symfony2.",
+            "homepage": "http://twitter.github.com/bootstrap/",
+            "keywords": [
+                "front-end framework",
+                "symfony twitter bootstrap",
+                "twitter",
+                "twitter bootstrap"
+            ],
+            "time": "2013-01-16 00:00:00"
         }
     ],
     "packages-dev": [

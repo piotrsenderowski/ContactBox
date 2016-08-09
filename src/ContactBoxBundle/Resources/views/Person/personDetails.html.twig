@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <div>
+    <p>
+        <a href="{{ url("contactbox_person_listperson") }}">Back to the list</a>
+        <a href="{{ url("contactbox_person_modifyperson", {"id": person.id}) }}">Edit contact</a>
+    </p>
+    </div>
+    Name: {{ person.name }} <br>
+    Surname: {{ person.surname }} <br>
+    Description: {{ person.description }} <br>
+{% endblock %}

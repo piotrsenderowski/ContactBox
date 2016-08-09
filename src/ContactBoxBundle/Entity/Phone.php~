@@ -36,15 +36,16 @@ class Phone
     private $phoneType;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Person")
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="phones")
      * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
      */
     private $person;
 
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -67,7 +68,7 @@ class Phone
     /**
      * Get phoneNumber
      *
-     * @return string 
+     * @return string
      */
     public function getPhoneNumber()
     {
@@ -90,10 +91,11 @@ class Phone
     /**
      * Get phoneType
      *
-     * @return string 
+     * @return string
      */
     public function getPhoneType()
     {
         return $this->phoneType;
     }
+
 }

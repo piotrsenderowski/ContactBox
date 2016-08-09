@@ -1,6 +1,119 @@
 {% extends "::base.html.twig" %}
-{% block title %} Contact form {% endblock %}
-{% block head %} Contact {% endblock %}
+{% block title %} Contact Box - {{ person.name }} {{ person.surname }} {% endblock %}
+{% block head %} Contact details - {{ person.name }} {{ person.surname }} {% endblock %}
 {% block body %}
-{{ dump(person.) }}
+    <div>
+        <p>{% include "ContactBoxBundle:Person:personDetails.html.twig" with {"person": person} %}</p>
+    </div>
+
+    <div>
+        <table>
+            <thead><h4>Addresses - <a href="{{ url("contactbox_address_addaddress", {"id": person.id}) }}">Add
+                    address</a></h4>
+            </thead>
+            <tbody>
+            <tr>
+                <th>City</th>
+                <th>Street</th>
+                <th>House number</th>
+                <th>Apartment number</th>
+                <th>Address type</th>
+                {#<th>Edit</th>#}
+                <th>Delete</th>
+            </tr>
+            {% if allAddresses is defined %}
+                {% for address in allAddresses %}
+                    <tr>
+                        <td>{{ address.city }}</td>
+                        <td>{{ address.street }}</td>
+                        <td>{{ address.houseNumber }}</td>
+                        <td>{{ address.aptNumber }}</td>
+                        <td>{{ address.addressType }}</td>
+                        {#<td><a href="{{ url("contactbox_address_modifyaddress", {"id": address.id}) }}">Edit</a></td>#}
+                        <td>
+                            <a href="{{ url("contactbox_address_deleteaddress", {"id": person.id, "addressId": address.id}) }}">Delete</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7" align="center">No addresses added.</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="7" align="center">No addresses added.</td>
+                </tr>
+            {% endif %}
+
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <table>
+            <thead><h4>Emails - <a href="{{ url("contactbox_email_addemail", {"id": person.id}) }}">Add email</a></h4>
+            </thead>
+            <tbody>
+            <tr>
+                <th>Email</th>
+                <th>Email type</th>
+                {#<th>Edit</th>#}
+                <th>Delete</th>
+            </tr>
+            {% if allEmails is defined %}
+                {% for email in allEmails %}
+                    <tr>
+                        <td>{{ email.email }}</td>
+                        <td>{{ email.emailType }}</td>
+                        {#<td><a href="{{ url("contactbox_email_modifyemail", {"id": email.id}) }}">Edit</a></td>#}
+                        <td><a href="{{ url("contactbox_email_deleteemail", {"id": email.id}) }}">Delete</a></td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4" align="center">No emails added.</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4" align="center">No emails added.</td>
+                </tr>
+            {% endif %}
+
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <table>
+            <thead><h4>Phones - <a href="{{ url("contactbox_phone_addphone", {"id": person.id}) }}">Add phone</a></h4>
+            </thead>
+            <tbody>
+            <tr>
+                <th>Phone number</th>
+                <th>Phone type</th>
+                {#<th>Edit</th>#}
+                <th>Delete</th>
+            </tr>
+            {% if allPhones is defined %}
+                {% for phone in allPhones %}
+                    <tr>
+                        <td>{{ phone.phoneNumber }}</td>
+                        <td>{{ phone.phoneType }}</td>
+                        {#<td><a href="{{ url("contactbox_phone_modifyphones", {"id": phone.id}) }}">Edit</a></td>#}
+                        <td><a href="{{ url("contactbox_phone_deletephone", {"id": phone.id}) }}">Delete</a></td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4" align="center">No phones added.</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4" align="center">No phones added.</td>
+                </tr>
+            {% endif %}
+
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

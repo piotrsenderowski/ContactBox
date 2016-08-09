@@ -2,7 +2,14 @@
 {% block title %} Contact form {% endblock %}
 {% block head %} Contact {% endblock %}
 {% block body %}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <div><p>
+            <a href="{{ url("contactbox_person_listperson") }}">Back to the list</a>
+        </p>
+    </div>
+    <div>
+        {{ form_start(person_form) }}
+        {{ form_widget(person_form) }}
+        {{ form_end(person_form) }}
+    </div>
+
 {% endblock %}

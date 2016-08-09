@@ -36,7 +36,7 @@ class Email
     private $emailType;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Person")
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="emails")
      * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
      */
     private $person;
@@ -45,7 +45,7 @@ class Email
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -68,7 +68,7 @@ class Email
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -91,12 +91,13 @@ class Email
     /**
      * Get emailType
      *
-     * @return string 
+     * @return string
      */
     public function getEmailType()
     {
         return $this->emailType;
     }
+
 
     /**
      * Set person

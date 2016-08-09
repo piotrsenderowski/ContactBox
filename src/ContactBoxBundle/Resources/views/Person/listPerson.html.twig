@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+{% block title %} Contact Box - Contacts{% endblock %}
+{% block head %} Contact list: {% endblock %}
+{% block body %}
+    <div>
+        <p>
+            <a href="{{ url("contactbox_person_newperson") }}">Add new contact</a>
+        </p>
+    </div>
+    <div>
+        <table>
+            <thead>
+            Contact List
+            </thead>
+            <tbody>
+            <tr>
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            {% for person in allPersons %}
+
+                <tr>
+                    <td><a href="{{ url("contactbox_person_showperson", {"id": person.id}) }}">{{ person.surname }}</a>
+                    </td>
+                    <td><a href="{{ url("contactbox_person_showperson", {"id": person.id}) }}">{{ person.name }}</a>
+                    </td>
+                    <td><a href="{{ url("contactbox_person_modifyperson", {"id": person.id}) }}">Edit</a></td>
+                    <td><a href="{{ url("contactbox_person_deleteperson", {"id": person.id}) }}">Delete</a></td>
+                </tr>
+
+            {% else %}
+                No contacts added. <br>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

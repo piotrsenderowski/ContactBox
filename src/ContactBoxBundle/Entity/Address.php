@@ -57,7 +57,7 @@ class Address
     private $addressType;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Person")
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="addresses")
      * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
      */
     private $person;
@@ -66,7 +66,7 @@ class Address
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -89,7 +89,7 @@ class Address
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
@@ -112,7 +112,7 @@ class Address
     /**
      * Get street
      *
-     * @return string 
+     * @return string
      */
     public function getStreet()
     {
@@ -135,7 +135,7 @@ class Address
     /**
      * Get houseNumber
      *
-     * @return string 
+     * @return string
      */
     public function getHouseNumber()
     {
@@ -158,7 +158,7 @@ class Address
     /**
      * Get aptNumber
      *
-     * @return string 
+     * @return string
      */
     public function getAptNumber()
     {
@@ -181,12 +181,13 @@ class Address
     /**
      * Get addressType
      *
-     * @return string 
+     * @return string
      */
     public function getAddressType()
     {
         return $this->addressType;
     }
+
 
     /**
      * Set person

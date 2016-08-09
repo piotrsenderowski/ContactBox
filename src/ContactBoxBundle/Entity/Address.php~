@@ -45,19 +45,19 @@ class Address
     /**
      * @var string
      *
-     * @ORM\Column(name="apt_number", type="string", length=255)
+     * @ORM\Column(name="apt_number", type="string", length=255, nullable=true)
      */
     private $aptNumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="address_type", type="string", length=255, nullable=true)
+     * @ORM\Column(name="address_type", type="string", length=255)
      */
     private $addressType;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Person")
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="addresses")
      * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
      */
     private $person;
@@ -66,7 +66,7 @@ class Address
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -89,7 +89,7 @@ class Address
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
@@ -112,7 +112,7 @@ class Address
     /**
      * Get street
      *
-     * @return string 
+     * @return string
      */
     public function getStreet()
     {
@@ -135,7 +135,7 @@ class Address
     /**
      * Get houseNumber
      *
-     * @return string 
+     * @return string
      */
     public function getHouseNumber()
     {
@@ -158,7 +158,7 @@ class Address
     /**
      * Get aptNumber
      *
-     * @return string 
+     * @return string
      */
     public function getAptNumber()
     {
@@ -181,33 +181,11 @@ class Address
     /**
      * Get addressType
      *
-     * @return string 
+     * @return string
      */
     public function getAddressType()
     {
         return $this->addressType;
     }
 
-    /**
-     * Set person
-     *
-     * @param \ContactBoxBundle\Entity\Person $person
-     * @return Address
-     */
-    public function setPerson(\ContactBoxBundle\Entity\Person $person = null)
-    {
-        $this->person = $person;
-
-        return $this;
-    }
-
-    /**
-     * Get person
-     *
-     * @return \ContactBoxBundle\Entity\Person 
-     */
-    public function getPerson()
-    {
-        return $this->person;
-    }
 }

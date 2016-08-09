@@ -12,4 +12,23 @@ use Doctrine\ORM\EntityRepository;
  */
 class PersonRepository extends EntityRepository
 {
+    public function findAllNameAsc()
+    {
+        return $this->findBy([],['name' => "Asc"]);
+    }
+
+    public function findAllNameDesc()
+    {
+        return $this->findBy([],['name' => "Desc"]);
+    }
+
+    public function findAllSurnameAsc()
+    {
+        return $this->findBy([],['surname' => "Asc"]);
+    }
+
+    public function findAllSurnameDesc()
+    {
+        return $this->findBy([],['surname' => "Desc"]);
+    }
 }

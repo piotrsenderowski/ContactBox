@@ -2,7 +2,3 @@ contact_box:
     resource: "@ContactBoxBundle/Controller/"
     type:     annotation
     prefix:   /
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation

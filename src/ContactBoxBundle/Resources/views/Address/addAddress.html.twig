@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+{% block title %} Contact form {% endblock %}
+{% block head %} Contact {% endblock %}
+{% block body %}
+    <div><p>
+            <a href="{{ url("contactbox_person_showperson", {"id": address.person.id}) }}">Back to the contact's main page</a>
+        </p>
+    </div>
+    <div>
+        {{ form_start(address_form) }}
+        {{ form_widget(address_form) }}
+        {{ form_end(address_form) }}
+    </div>
+
+{% endblock %}

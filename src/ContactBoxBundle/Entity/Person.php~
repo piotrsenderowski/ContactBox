@@ -42,11 +42,32 @@ class Person
      */
     private $description;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Address", mappedBy="person")
+     */
+    private $addresses;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Email", mappedBy="person")
+     */
+    private $emails;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Phone", mappedBy="person")
+     */
+    private $phones;
+
+    public function __construct() {
+        $this->addresses = new ArrayCollection();
+        $this->emails = new ArrayCollection();
+        $this->phones = new ArrayCollection();
+    }
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +90,7 @@ class Person
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -92,7 +113,7 @@ class Person
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
     public function getSurname()
     {
@@ -115,7 +136,7 @@ class Person
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
