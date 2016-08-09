@@ -2,11 +2,11 @@
 {% block body %}
     <div>
     <p>
-        <a href="{{ url("contactbox_person_listperson") }}">Back to the list</a>
-        <a href="{{ url("contactbox_person_modifyperson", {"id": person.id}) }}">Edit contact</a>
+        <a style="font-weight: bold" href="{{ url("contactbox_person_listperson") }}">Back to the list</a>
+        <a style="font-weight: bold" href="{{ url("contactbox_person_modifyperson", {"id": person.id}) }}">Edit contact</a>
     </p>
     </div>
-    Name: {{ person.name }} <br>
-    Surname: {{ person.surname }} <br>
-    Description: {{ person.description }} <br>
+    <h3>Name: {{ person.name }}</h3>
+    <h3>Surname: {{ person.surname }}</h3>
+    <h3>Description: {{ person.description }}</h3>
 {% endblock %}

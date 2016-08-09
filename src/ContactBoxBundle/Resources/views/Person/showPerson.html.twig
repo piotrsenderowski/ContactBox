@@ -2,13 +2,13 @@
 {% block title %} Contact Box - {{ person.name }} {{ person.surname }} {% endblock %}
 {% block head %} Contact details - {{ person.name }} {{ person.surname }} {% endblock %}
 {% block body %}
-    <div>
+    <div class="container">
         <p>{% include "ContactBoxBundle:Person:personDetails.html.twig" with {"person": person} %}</p>
     </div>
 
-    <div>
-        <table>
-            <thead><h4>Addresses - <a href="{{ url("contactbox_address_addaddress", {"id": person.id}) }}">Add
+    <div class="container">
+        <table class="table table-bordered">
+            <thead><h4>Addresses - <a style="font-weight: bold" href="{{ url("contactbox_address_addaddress", {"id": person.id}) }}">Add
                     address</a></h4>
             </thead>
             <tbody>
@@ -49,9 +49,9 @@
         </table>
     </div>
 
-    <div>
-        <table>
-            <thead><h4>Emails - <a href="{{ url("contactbox_email_addemail", {"id": person.id}) }}">Add email</a></h4>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead><h4>Emails - <a style="font-weight: bold" href="{{ url("contactbox_email_addemail", {"id": person.id}) }}">Add email</a></h4>
             </thead>
             <tbody>
             <tr>
@@ -83,9 +83,9 @@
         </table>
     </div>
 
-    <div>
-        <table>
-            <thead><h4>Phones - <a href="{{ url("contactbox_phone_addphone", {"id": person.id}) }}">Add phone</a></h4>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead><h4>Phones - <a style="font-weight: bold"href="{{ url("contactbox_phone_addphone", {"id": person.id}) }}">Add phone</a></h4>
             </thead>
             <tbody>
             <tr>
